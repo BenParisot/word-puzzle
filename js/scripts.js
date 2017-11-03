@@ -7,15 +7,30 @@ $(document).ready(function() {
     event.preventDefault();
     var sentence = $("input#sentence").val();
     var splitSentences = sentence.split("");
+		var newSentence = [];
 
     splitSentences.forEach(function(letter) {
-      if (letter === "a" || letter === "o") {
-        alert("this is a vowel");
+      if (letter === "a" || letter === "o" || letter === "e" || letter === "i" || letter === "u" || letter === "y") {
+				//alert("this is a vowel");
+				newSentence.push("-");
+
       }
       else {
-        alert("this is not a vowel");
+        //alert("this is not a vowel");
+				newSentence.push(letter);
       }
     });
+		var finalSentence = newSentence.join("");
+		document.getElementById("input").reset();
+
+		//alert(finalSentence);
+
+
+
+		$("#final").text(finalSentence);
+
+
+		//console.log(finalSentence);
 
     // var results = [];
     // for (var currentLetter = 0; currentLetter < splitSentences.length; currentLetter += 1) {
