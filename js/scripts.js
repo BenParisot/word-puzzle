@@ -9,17 +9,28 @@ $(document).ready(function() {
     var splitSentences = sentence.split("");
 		var newSentence = [];
 
-    splitSentences.forEach(function(letter) {
-      if (letter === "a" || letter === "o" || letter === "e" || letter === "i" || letter === "u" || letter === "y") {
-				//alert("this is a vowel");
-				newSentence.push("-");
+    for (var index = 0; index < splitSentences.length; index += 1) {
+      if (splitSentences[index] === "a" || splitSentences[index] === "e" || splitSentences[index] === "i" || splitSentences[index] === "o" || splitSentences[index] === "u" || splitSentences[index] === "y") {
+        newSentence.push("-");
+      } else {
+        newSentence.push(splitSentences[index]);
+      }
 
-      }
-      else {
-        //alert("this is not a vowel");
-				newSentence.push(letter);
-      }
-    });
+    }
+
+
+    // splitSentences.forEach(function(letter) {
+    //   if (letter === "a" || letter === "o" || letter === "e" || letter === "i" || letter === "u" || letter === "y") {
+		// 		//alert("this is a vowel");
+		// 		newSentence.push("-");
+    //
+    //   }
+    //   else {
+    //     //alert("this is not a vowel");
+		// 		newSentence.push(letter);
+    //   }
+    // });
+
 		var finalSentence = newSentence.join("");
 		document.getElementById("input").reset();
 
